@@ -1,30 +1,29 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import RoadmapPage from "./pages/Roadmap";
-import Community from "./pages/Community";
-import Faq from "./pages/Faq";
-import Gallery from "./pages/Gallery";
-import ComingSoon from "./pages/ComingSoon";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Roadmap from "./components/Roadmap";
+import Tokenomics from "./components/Tokenomics";
+import Team from "./components/Team";
+import Community from "./components/Community";
+import Footer from "./components/Footer";
+import "./index.css";
+import "./styles/animations.css";
 
 const App = () => {
   return (
-    <Router>
-      <div className="bg-black min-h-screen">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/roadmap" element={<RoadmapPage />} />
-          <Route path="/community" element={<Community />} />
-          <Route path="/faq" element={<Faq />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/comingsoon" element={<ComingSoon />} />
-        </Routes>
-      </div>
-    </Router>
+    <div className="bg-black text-white overflow-x-hidden">
+      <Navbar />
+      <main className="pt-20">
+        <Hero />
+        <About />
+        <Roadmap />
+        <Tokenomics />
+        <Team />
+        <Community />
+      </main>
+      <Footer />
+    </div>
   );
 };
 
